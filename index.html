@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DACH Marktforschungsfragebogen</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="side-panel">
+      <div class="brand-block">
+        <div class="brand-mark">Markt<span>forschung</span></div>
+        <div class="brand-line"></div>
+        <div class="brand-subtitle">Bedarfserhebung zu administrativen Abläufen</div>
+      </div>
+
+      <nav class="segment-nav" aria-label="Zielgruppen">
+        <button class="segment-tab is-active" type="button" data-segment="recruiting"><span>01</span><strong>Recruiting</strong></button>
+        <button class="segment-tab" type="button" data-segment="immobilien"><span>02</span><strong>Immobilien</strong></button>
+        <button class="segment-tab" type="button" data-segment="reinigung"><span>03</span><strong>Reinigung / Facility</strong></button>
+        <button class="segment-tab" type="button" data-segment="handwerk"><span>04</span><strong>Handwerk / Bau</strong></button>
+        <button class="segment-tab" type="button" data-segment="pflege"><span>05</span><strong>Pflege / Betreuung</strong></button>
+        <button class="segment-tab" type="button" data-segment="buchhaltung"><span>06</span><strong>Buchhaltung</strong></button>
+      </nav>
+
+      <div class="service-note">
+        <span class="note-kicker">Status</span>
+        <strong id="completionLabel">0 Prozent vollständig</strong>
+        <div class="meter" aria-hidden="true"><span id="completionMeter"></span></div>
+      </div>
+    </aside>
+
+    <main class="workspace">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow" id="segmentKicker">Bedarfserhebung</p>
+          <h1 id="segmentTitle">Recruiting / Personalvermittlung</h1>
+        </div>
+        <div class="delivery-pill">3–5 Minuten</div>
+      </header>
+
+      <section class="legal-note">
+        <strong>Hinweis:</strong> Dieser Fragebogen dient ausschließlich der Marktforschung. Er enthält kein Angebot und ist keine Direktwerbung. Die Teilnahme ist freiwillig. Die Angaben werden nur zur Auswertung des Bedarfs an digitaler Unterstützung und KI-gestützter Büroautomatisierung verwendet.
+      </section>
+
+      <section class="package-strip" id="segmentStrip" aria-label="Ziel des Fragebogens"></section>
+
+      <form id="questionnaireForm" class="questionnaire" novalidate>
+        <div id="sections"></div>
+        <section class="submit-band">
+          <div>
+            <p class="eyebrow">Absenden</p>
+            <h2>Fragebogen absenden</h2>
+            <p class="submit-copy">Pflichtfelder werden lokal geprüft. Danach werden die Antworten zur Marktforschung gespeichert.</p>
+          </div>
+          <div class="submit-actions">
+            <button class="ghost-button" type="button" id="previewButton">Daten prüfen</button>
+            <button class="primary-button" type="submit">Fragebogen absenden</button>
+          </div>
+        </section>
+      </form>
+    </main>
+  </div>
+
+  <dialog id="previewDialog">
+    <div class="dialog-head">
+      <h2>Prüfansicht</h2>
+      <button type="button" id="closePreview" aria-label="Schließen">×</button>
+    </div>
+    <pre id="payloadPreview"></pre>
+  </dialog>
+
+  <script src="questionnaires.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
