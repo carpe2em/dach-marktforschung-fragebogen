@@ -23,16 +23,16 @@ body {
 }
 button, input, textarea, select { font: inherit; }
 .app-shell { min-height: 100vh; display: grid; grid-template-columns: 332px minmax(0, 1fr); }
-.side-panel { position: sticky; top: 0; height: 100vh; padding: 30px 24px; background: var(--blue); color: #fff; display: flex; flex-direction: column; gap: 28px; }
+.side-panel { position: sticky; top: 0; min-height: 100vh; padding: 24px 20px; background: var(--blue); color: #fff; display: flex; flex-direction: column; gap: 20px; }
 .brand-mark { font-family: Georgia, 'Times New Roman', serif; font-size: 38px; line-height: 1; }
 .brand-mark span { color: var(--gold); }
 .brand-line { height: 1px; background: var(--gold); margin: 15px 0 12px; }
 .brand-subtitle { color: #c8cfdb; font-size: 10px; text-transform: uppercase; letter-spacing: 3px; line-height: 1.7; }
-.segment-nav { display: grid; gap: 8px; }
-.segment-tab { width: 100%; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.04); color: #e9edf5; padding: 15px 16px; text-align: left; display: grid; grid-template-columns: 42px 1fr; align-items: center; gap: 12px; cursor: pointer; border-radius: 8px; }
+.segment-nav { display: grid; gap: 6px; }
+.segment-tab { width: 100%; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.04); color: #e9edf5; padding: 11px 13px; text-align: left; display: grid; grid-template-columns: 38px 1fr; align-items: center; gap: 10px; cursor: pointer; border-radius: 8px; }
 .segment-tab:hover, .segment-tab.is-active { border-color: rgba(189,147,56,.8); background: rgba(189,147,56,.12); }
 .segment-tab span { color: var(--gold); font-weight: 700; }
-.segment-tab strong { font-size: 13px; letter-spacing: .5px; }
+.segment-tab strong { font-size: 12px; letter-spacing: .4px; }
 .service-note { margin-top: auto; padding: 17px; border: 1px solid rgba(255,255,255,.14); border-radius: 8px; background: rgba(255,255,255,.05); }
 .note-kicker, .eyebrow { margin: 0 0 8px; color: var(--gold); font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; }
 .service-note strong { display: block; font-size: 15px; margin-bottom: 13px; }

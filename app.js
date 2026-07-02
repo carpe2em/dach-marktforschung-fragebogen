@@ -98,7 +98,7 @@ function renderField(field) {
 function collectPayload() {
   const definition = activeSegmentDefinition();
   const payload = {
-    formular_version: "DACH-MF-2026-02",
+    formular_version: "DACH-MF-2026-03",
     segment: state.segment,
     segment_label: definition.title,
     contact_id: state.contactId,

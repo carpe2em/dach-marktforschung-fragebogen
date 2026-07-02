@@ -34,7 +34,37 @@ const SEGMENTS = {
     kicker: "B6 Buchhaltung",
     features: [["Fokus", "Dokumente, Fristen, Kundenkommunikation"], ["Ziel", "Digitale Unterstützung für wiederkehrende Aufgaben prüfen"], ["Dauer", "3–5 Minuten"]],
     sections: ["basis", "admin", "ki", "buchhaltungSpecific", "potential", "consent"]
-  }
+  },
+  beauty: {
+    title: "Beauty / Friseur / Kosmetik / Wellness",
+    kicker: "B7 Beauty",
+    features: [["Fokus", "Termine, Kundenanfragen, Erinnerungen"], ["Ziel", "Zeitfresser im Salon- und Praxisalltag erkennen"], ["Dauer", "3–5 Minuten"]],
+    sections: ["basis", "admin", "ki", "beautySpecific", "potential", "consent"]
+  },
+  auto: {
+    title: "Auto-Service / Werkstatt / Reifen / Fahrzeugpflege",
+    kicker: "B8 Auto-Service",
+    features: [["Fokus", "Anfragen, Termine, Angebote, Dokumentation"], ["Ziel", "Administrative Abläufe in Werkstätten verstehen"], ["Dauer", "3–5 Minuten"]],
+    sections: ["basis", "admin", "ki", "autoSpecific", "potential", "consent"]
+  },
+  gastro: {
+    title: "Gastronomie / kleine Lokale / Catering",
+    kicker: "B9 Gastronomie",
+    features: [["Fokus", "Reservierungen, Anfragen, Dienstpläne, Bestellungen"], ["Ziel", "Digitale Entlastung in kleinen Betrieben prüfen"], ["Dauer", "3–5 Minuten"]],
+    sections: ["basis", "admin", "ki", "gastroSpecific", "potential", "consent"]
+  },
+  lokaleDienstleister: {
+    title: "Weitere Handwerksbetriebe / lokale Dienstleister",
+    kicker: "B10 Lokale Dienste",
+    features: [["Fokus", "Kundenanfragen, Termine, Angebote, Aufgaben"], ["Ziel", "Wiederkehrende Büroprozesse lokaler Betriebe erfassen"], ["Dauer", "3–5 Minuten"]],
+    sections: ["basis", "admin", "ki", "lokaleDienstleisterSpecific", "potential", "consent"]
+  },
+  gesundheit: {
+    title: "Ärzte / Ordinationen / Therapie / Praxisorganisation",
+    kicker: "B11 Gesundheit",
+    features: [["Fokus", "Terminorganisation, Anfragen, Dokumente"], ["Ziel", "Administrative Entlastung ohne Gesundheitsdaten prüfen"], ["Dauer", "3–5 Minuten"]],
+    sections: ["basis", "admin", "ki", "gesundheitSpecific", "potential", "consent"]
+
 };
 
 const FIELD_LIBRARY = {
@@ -129,6 +159,56 @@ const FIELD_LIBRARY = {
       { key: "buchhaltung_aufwand", label: "Was kostet administrativ besonders viel Zeit?", type: "select", required: true, options: ["Unterlagen anfordern", "Fristen nachverfolgen", "Rückfragen beantworten", "Dokumentenablage", "Lohn-/Personalunterlagen", "Standard-E-Mails", "Sonstiges"] },
       { key: "buchhaltung_tools", label: "Welche Systeme oder Prozesse werden bereits genutzt?", type: "textarea", required: false, full: true, help: "Bitte keine vertraulichen Mandantendaten angeben." },
       { key: "buchhaltung_automatisierung", label: "Welche Unterstützung wäre am wertvollsten?", type: "select", required: true, options: ["Checklisten / Unterlagenanforderung", "Fristenerinnerungen", "Standardantworten", "Dokumentenübersicht", "Interne Aufgabenverteilung", "Noch unklar"] }
+    ]
+  },
+  beautySpecific: {
+    title: "Beauty-/Salon-spezifische Fragen",
+    note: "Für Friseursalons, Kosmetikstudios, Nagelstudios, Massage, Wellness und verwandte lokale Anbieter.",
+    fields: [
+      { key: "beauty_anfragen", label: "Wie viele neue Kundenanfragen oder Terminwünsche entstehen ungefähr pro Woche?", type: "select", required: true, options: ["Unter 10", "10–25", "26–50", "51–100", "Mehr als 100", "Nicht einschätzbar"] },
+      { key: "beauty_kanaele", label: "Über welche Kanäle kommen Anfragen hauptsächlich?", type: "textarea", required: false, full: true, help: "Zum Beispiel Telefon, E-Mail, Website, Instagram, WhatsApp oder Buchungsplattform." },
+      { key: "beauty_aufwand", label: "Was kostet im Alltag besonders viel Zeit?", type: "select", required: true, options: ["Terminvereinbarung", "Terminverschiebungen / Absagen", "Erinnerungen", "Kundenfragen", "Gutscheine / Angebote", "Nachrichten über Social Media", "Sonstiges"] },
+      { key: "beauty_automatisierung", label: "Welche digitale Unterstützung wäre am interessantesten?", type: "select", required: true, options: ["Termin- und Erinnerungsabläufe", "Antwortvorlagen für Kundenfragen", "Warteliste / Rückrufe", "Gutschein- oder Angebotsverwaltung", "Interne Aufgabenübersicht", "Noch unklar"] }
+    ]
+  },
+  autoSpecific: {
+    title: "Auto-Service-/Werkstatt-spezifische Fragen",
+    note: "Für Werkstätten, Reifenservice, Fahrzeugpflege, Aufbereitung und verwandte Fahrzeugdienstleister.",
+    fields: [
+      { key: "auto_anfragen", label: "Wie viele neue Kundenanfragen oder Terminwünsche entstehen ungefähr pro Woche?", type: "select", required: true, options: ["Unter 10", "10–25", "26–50", "51–100", "Mehr als 100", "Nicht einschätzbar"] },
+      { key: "auto_auftrag", label: "Wie werden Aufträge und Termine aktuell überwiegend organisiert?", type: "select", required: true, options: ["Kalender / Papier", "Excel / Tabellen", "Branchensoftware", "E-Mail / Telefonnotizen", "Kombination", "Nicht bekannt"] },
+      { key: "auto_aufwand", label: "Was kostet administrativ besonders viel Zeit?", type: "select", required: true, options: ["Terminabstimmung", "Kostenvoranschläge", "Rückfragen an Kunden", "Ersatzteil-/Materialkoordination", "Dokumentation", "Follow-up / Erinnerungen", "Sonstiges"] },
+      { key: "auto_automatisierung", label: "Welche Unterstützung wäre am wertvollsten?", type: "select", required: true, options: ["Terminübersicht", "Kostenvoranschlags-Vorlagen", "Kunden-Erinnerungen", "Aufgaben- und Statusübersicht", "Dokumenten-/Fotodokumentation", "Noch unklar"] }
+    ]
+  },
+  gastroSpecific: {
+    title: "Gastronomie-/Catering-spezifische Fragen",
+    note: "Für kleine Lokale, Cafés, Restaurants, Imbisse und Cateringanbieter.",
+    fields: [
+      { key: "gastro_anfragen", label: "Wie viele Reservierungs-, Catering- oder Kundenanfragen entstehen ungefähr pro Woche?", type: "select", required: true, options: ["Unter 10", "10–25", "26–50", "51–100", "Mehr als 100", "Nicht einschätzbar"] },
+      { key: "gastro_kanaele", label: "Über welche Kanäle kommen Anfragen hauptsächlich?", type: "textarea", required: false, full: true, help: "Zum Beispiel Telefon, Website, E-Mail, Social Media, Lieferplattformen." },
+      { key: "gastro_aufwand", label: "Was kostet administrativ besonders viel Zeit?", type: "select", required: true, options: ["Reservierungen", "Catering-Anfragen / Angebote", "Dienstpläne", "Bestellungen / Lieferanten", "Kundenkommunikation", "Bewertungen / Rückmeldungen", "Sonstiges"] },
+      { key: "gastro_automatisierung", label: "Welche Unterstützung wäre am interessantesten?", type: "select", required: true, options: ["Reservierungsübersicht", "Antwortvorlagen", "Catering-Angebotsvorlagen", "Dienstplan-/Aufgabenübersicht", "Bestell- oder Checklisten", "Noch unklar"] }
+    ]
+  },
+  lokaleDienstleisterSpecific: {
+    title: "Lokale-Dienstleister-spezifische Fragen",
+    note: "Für weitere Handwerks- und Dienstleistungsbetriebe wie Schneiderei, Reparaturdienste, Hausservice, Umzug, Montage oder ähnliche Anbieter.",
+    fields: [
+      { key: "lokal_anfragen", label: "Wie viele neue Kundenanfragen entstehen ungefähr pro Woche?", type: "select", required: true, options: ["Unter 5", "5–10", "11–25", "26–50", "Mehr als 50", "Nicht einschätzbar"] },
+      { key: "lokal_angebot", label: "Wie werden Angebote oder Preisangaben aktuell erstellt?", type: "select", required: true, options: ["Telefonisch / mündlich", "E-Mail frei formuliert", "Word/PDF manuell", "Excel-Vorlage", "Branchensoftware", "Kombination", "Nicht bekannt"] },
+      { key: "lokal_aufwand", label: "Was kostet besonders viel Zeit?", type: "select", required: true, options: ["Erstantwort auf Anfragen", "Terminabstimmung", "Angebote / Preisangaben", "Aufgabenplanung", "Dokumentation", "Follow-up", "Sonstiges"] },
+      { key: "lokal_automatisierung", label: "Welche digitale Unterstützung wäre am wertvollsten?", type: "select", required: true, options: ["Anfrage-Erfassung", "Angebotsvorlagen", "Termin-/Aufgabenübersicht", "Kunden-E-Mail-Vorlagen", "Follow-up-Erinnerungen", "Noch unklar"] }
+    ]
+  },
+  gesundheitSpecific: {
+    title: "Praxis-/Gesundheitsorganisations-spezifische Fragen",
+    note: "Bitte keine Gesundheitsdaten einzelner Personen angeben. Es geht ausschließlich um allgemeine administrative Abläufe.",
+    fields: [
+      { key: "gesundheit_anfragen", label: "Wie viele Termin- oder Organisationsanfragen entstehen ungefähr pro Woche?", type: "select", required: true, options: ["Unter 10", "10–25", "26–50", "51–100", "Mehr als 100", "Nicht einschätzbar"] },
+      { key: "gesundheit_aufwand", label: "Was kostet administrativ besonders viel Zeit?", type: "select", required: true, options: ["Terminvereinbarung", "Terminverschiebungen", "Informationsversand", "Formulare / Unterlagen", "Rückfragen", "Interne Aufgaben", "Sonstiges"] },
+      { key: "gesundheit_grenze", label: "Welche Daten oder Prozesse sollten Ihrer Meinung nach keinesfalls in KI-Tools verarbeitet werden?", type: "textarea", required: false, full: true },
+      { key: "gesundheit_automatisierung", label: "Welche Unterstützung wäre ohne Verarbeitung sensibler Gesundheitsdaten interessant?", type: "select", required: true, options: ["Termin- und Erinnerungsorganisation", "Informationsvorlagen", "Checklisten", "Interne Aufgabenübersicht", "Allgemeine Anfrage-Sortierung", "Noch unklar"] }
     ]
   },
   potential: {
