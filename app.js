@@ -1,6 +1,5 @@
 const CONFIG = {
-  // Apps-Script-Web-App-URL für die Speicherung der Antworten in Google Drive / Google Sheets.
-  WEB_APP_URL: "https://script.google.com/macros/s/AKfycbzS-1yge9Y9avzWwKnNRq9jRTyqxJcPr27FygMNtzZrDB16mXF8XGvkv9prY64s-yUt/exec"
+  WEB_APP_URL: "https://script.google.com/macros/s/AKfycbxtbI-RICmV36jg0pDmJhbxM08BXYX02HHX9W6dbsNj1BD0xEVyBXiwHHOKeHMpkWvf/exec"
 };
 
 const params = new URLSearchParams(window.location.search);
