@@ -64,7 +64,7 @@ const SEGMENTS = {
     kicker: "B11 Gesundheit",
     features: [["Fokus", "Terminorganisation, Anfragen, Dokumente"], ["Ziel", "Administrative Entlastung ohne Gesundheitsdaten prüfen"], ["Dauer", "3–5 Minuten"]],
     sections: ["basis", "admin", "ki", "gesundheitSpecific", "potential", "consent"]
-
+  }
 };
 
 const FIELD_LIBRARY = {
